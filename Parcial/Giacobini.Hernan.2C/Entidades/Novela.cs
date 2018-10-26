@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +20,8 @@ namespace Entidades
 
         public override string Mostrar()
         {
-            string laNovela = string.Format();
+            
+            return string.Format("{0} {1} {2}",base.Mostrar(),cantPaginas,TipoImpresion);
         }
 
         public Novela(int cantPaginas, string titulo, float tamanioLetra, int ancho, int alto):base(titulo,tamanioLetra,ancho,alto)
@@ -30,12 +31,15 @@ namespace Entidades
 
         public static bool operator !=(Novela n1, Novela n2)
         {
-
+          return !(n1 == n2);
         }
 
         public static bool operator ==(Novela n1, Novela n2)
         {
-
+      if (n1.Mostrar() == n2.Mostrar())
+        return true;
+      else
+        return false;
         }
     }
 }

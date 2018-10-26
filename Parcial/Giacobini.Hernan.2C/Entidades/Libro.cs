@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +8,8 @@ namespace Entidades
 {
     public abstract class Libro
     {
-        private static int altoHoja;
-        private static int anchoHoja;
+        private int altoHoja;
+        private int anchoHoja;
         private List<string> pagina;
         private float tamanioLetra;
         private string titulo;
@@ -35,7 +35,7 @@ namespace Entidades
         {
             get
             {
-
+                  return this.pagina.Count;
             }
         }
 
@@ -43,16 +43,16 @@ namespace Entidades
         {
             get
             {
-
+                return this.tamanioLetra;
             }
             set
             {
                 int sumaAltoAncho = altoHoja + altoHoja;
                 float diezPorCiento = (10 * sumaAltoAncho) / 100;
 
-                if (TamanioLetra<sumaAltoAncho)
+                if (value < sumaAltoAncho)
                 {
-                    this.tamanioLetra = TamanioLetra;
+                    this.tamanioLetra = value;
                 }
                 else
                 {
@@ -65,11 +65,14 @@ namespace Entidades
         {
             get
             {
-                return pagina[index];
+                if (index > pagina.Count)
+                    return "";
+                else
+                    return pagina[index];
             }
             set
             {
-                this.pagina.Add("" + pagina.Count + 1);
+                this.pagina.Add(value);
             }
         }
 
@@ -81,12 +84,17 @@ namespace Entidades
 
         private Libro()
         {
-            pagina = null;
+            pagina = new List<string>();
         }
 
-        public Libro(string titulo, float tamanioLetra, int ancho, int alto)
+        public Libro(string titulo, float tamanioLetra, int ancho, int alto):this()
         {
-
+            this.titulo = titulo;
+            this.TamanioLetra=tamanioLetra;
+            this.anchoHoja = ancho;
+            this.altoHoja = alto;
+            
+      
         }
 
         public virtual string Mostrar()

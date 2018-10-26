@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="Entidades.Libro">
     <Position X="0.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <NestedTypes>
-      <Enum Name="Entidades.Libro.ETipoImpresion" Collapsed="true">
+      <Enum Name="Entidades.Libro.ETipoImpresion">
         <TypeIdentifier>
           <NewMemberFileName>Libro.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AgICAAIAAAQAAAQACAIAAgACAAAAAEAAAAAAEAAAAgA=</HashCode>
+      <HashCode>AgICAAIAAAQAAAQACAIAAgACAAAAAAAAAAAAEAAAAgA=</HashCode>
       <FileName>Libro.cs</FileName>
     </TypeIdentifier>
   </Class>
